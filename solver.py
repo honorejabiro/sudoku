@@ -77,7 +77,7 @@ def ac3(csp, queue):
         if REVISE(csp, X, Y):
             if not csp.domains[X]:
                 return False
-            inferences[X] = csp.domains[X].copy()
+            inferences[X] = csp.domains[X]
             for Z in csp.neighbors[X] - {Y}:
                 queue.append((Z, X))
     return inferences
