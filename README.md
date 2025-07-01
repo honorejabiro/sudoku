@@ -1,6 +1,6 @@
 # Sudoku Solver
 
-A Sudoku puzzle solver implemented in Python using backtracking with constraint propagation via AC3 algorithm.
+A Sudoku puzzle solver implemented in Python using backtracking with constraint propagation via AC3 algorithm. This is a Constraint Satisfaction Problem (CSP).
 
 ## Features
 
@@ -15,16 +15,17 @@ A Sudoku puzzle solver implemented in Python using backtracking with constraint 
 1. Place your Sudoku puzzle grid in a text file (e.g., `puzzle.txt`) with 9 lines, each line containing 9 digits (`0` for empty cells).
 
 Example:
-
-530070000 \n
-600195000 \n
-098000060 \n
-800060003 \n
-400803001 \n
-700020006 \n
-060000280 \n
-000419005 \n
+``` text
+530070000 
+600195000 
+098000060
+800060003
+400803001
+700020006
+060000280
+000419005
 000080079
+```
 
 2. Run the solver:
 
