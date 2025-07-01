@@ -11,7 +11,7 @@ from collections import deque
 import sys
 
 """
-Using MRV (Minimum Remaining Value) qwe get the variable with the leas number of domains after the inferences made
+Using MRV (Minimum Remaining Value) qwe get the variable with the least number of domains after the inferences made
 """
 def select_unnassigned_var(assignment, csp):
     lowest_domains = float("inf")
@@ -110,7 +110,15 @@ def Backtrack(assignment, csp) -> dict:
             saved_domains = deepcopy(csp.domains)
             csp.domains[var] = {value}
 
-            if inference(csp, assignment, var, ):
+            if inference(csp, assignment, var):
+                inference = inference(csp, assignment, var)
+                for i in inference:
+                    assignment[i] = inference[i]
+            result = Backtrack(assignment, csp)
+            if result:
+                return result
+            assignment = saved_domains
+                
 
 
     
