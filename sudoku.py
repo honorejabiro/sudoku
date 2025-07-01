@@ -69,13 +69,15 @@ class Sudoku:
         return neighbors
     
 
-    def __str__(self) -> None:
+    def __str__(self) -> str:
+        ans = ""
         for i in range(9):
             row = ""
             for j in range(9):
-                cell = self.grid[i][j]
-                row += f'{cell if cell != 0 else "*" }'
-            print(row)
+                cell = str(self.grid[i][j])
+                row += cell
+            ans += row + "\n"
+        return ans
 
     """
     Checks if the sudoku is complete and returns either true or false
