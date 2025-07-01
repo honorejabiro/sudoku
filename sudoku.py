@@ -17,11 +17,11 @@ class Sudoku:
     def initialize_domains(self) -> dict:
         domains = {}
 
-        for cell in self.cells:
-            if self.grid[cell] == 0:
-                domains[cell] = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+        for (x, y) in self.cells:
+            if self.grid[x][y] == 0:
+                domains[(x, y)] = {1, 2, 3, 4, 5, 6, 7, 8, 9}
             else:
-                domains[cell] = {self.grid[cell]}
+                domains[(x, y)] = {self.grid[x][y]}
         
         return domains
     
@@ -39,7 +39,7 @@ class Sudoku:
                     if i != column:
                         peers.add((row, i))
                     if i != row:
-                        peers.add(i, column)
+                        peers.add((i, column))
                 
                 """
                 Finding the starting of our box to add the neighbours of the cell to the set
